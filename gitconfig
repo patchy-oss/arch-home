@@ -1,0 +1,16 @@
+[user]
+	email = void.oss@pm.me
+	username = oss
+	name = patchy oss
+
+[core]
+	editor = nvim
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
