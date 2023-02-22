@@ -24,7 +24,8 @@ install_packages() {
         adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts
 
     # yay
-    sudo git clone https://aur.archlinux.org/yay-git.git /opt
+    cd /opt
+    sudo git clone https://aur.archlinux.org/yay-git.git
     sudo chown -R "$(id -un)":"$(id -un)" /opt/yay-git
     cd /opt/yay-git
     makepkg -si
@@ -62,9 +63,9 @@ install_base() {
 
 install_scripts() {
     echo "Installing scripts..."
-    git clone https://git.scarlet.house/oss/scripts "$CUR_DIR"
+    git clone https://git.scarlet.house/oss/scripts
     for f in "$CUR_DIR"/scripts/*; do
-        if [[ "$(basename "$f")" == 'README.md' ]]; then
+        if [[ "$(basename "$f")" == 'README.md' || "$(basename "$f")" == 'LICENSE' ]]; then
             continue
         fi
         chmod u+x "$f"
