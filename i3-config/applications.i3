@@ -30,7 +30,7 @@ bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym $mod+Shift+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Autostart
-exec --no-startup-id feh --bg-fill --randomize ~/backgrounds
+exec --no-startup-id feh --bg-fill --randomize --no-fehbg ~/backgrounds/*.jpg
 # exec --no-startup-id fcitx5 -d
 exec --no-startup-id ibus-daemon -drxR
 

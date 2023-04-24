@@ -17,7 +17,7 @@ init_home() {
 
 install_packages() {
     echo "Initing packages..."
-    sudo pacman -Syu firefox feh scrot xclip neovim mpv curl htop pcmanfm keepassxc \
+    sudo pacman -Syu firefox feh scrot xclip helix mpv curl htop pcmanfm keepassxc \
         p7zip zip unzip rsync neofetch gcc go gdb zsh tmux git openssh yt-dlp lua \
         adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts \
         adobe-source-han-serif-kr-fonts adobe-source-han-sans-kr-fonts \
@@ -43,13 +43,9 @@ install_base() {
     mv "$config_path/i3" "$AFTER_INSTALL/i3.bak"
     ln -s "$CUR_DIR/i3-config" "$config_path/i3"
 
-    # neovim
-    mv "$config_path/nvim" "$AFTER_INSTALL/nvim.bak"
-    mv "$HOME/.local/share/nvim" "$AFTER_INSTALL/local_share_nvim.bak"
-    mv "$HOME/.local/state/nvim" "$AFTER_INSTALL/local_state_nvim.bak"
-    mv "$HOME/.cache/nvim" "$AFTER_INSTALL/cache_nvim.bak"
-    git clone https://github.com/AstroNvim/AstroNvim "$config_path/nvim"
-    ln -s "$CUR_DIR/astronvim-config" "$config_path/nvim/lua/user"
+    # helix
+    mv "$config_path/helix" "$AFTER_INSTALL/helix.bak"
+    ln -s "$CUR_DIR/helix-config" "$config_path/helix"
 
     # mpv
     mv "$config_path/mpv" "$AFTER_INSTALL/mpv.bak"
@@ -97,6 +93,5 @@ install_scripts
 install_go_stuff
 
 echo "Installation is done. You have to set up st, zsh and some other stuff by yourself!"
-echo "Don't forget to configure neovim!"
 
 exit 0

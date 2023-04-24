@@ -1,5 +1,4 @@
 bindsym $mod+p mode "$mode_player"
-set $music_folder ~
 set $mode_player (p)lay, pa(u)se, (a)dd, playlis(t), (n)ext, p(r)ev, (l)oop, (k)ill
 mode "$mode_player" {
     bindsym p exec --no-startup-id i3mpv-mp play, mode "default"
